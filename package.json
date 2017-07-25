@@ -1,0 +1,9 @@
+{
+  "name": "micro-wspx-utils",
+  "version": "3.0.005",
+  "private": true,
+  "dependencies": {
+    "request":"",
+    "redis":"",
+  }
+}
