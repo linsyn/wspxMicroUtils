@@ -1,5 +1,6 @@
 var request = require('request');
-var redis = require('redis');
+var redis = require('ioredis');
+
 var red_client = null;
 
 
@@ -18,12 +19,14 @@ function init(host, pwd, port, callback) {
           red_port = 6379;
     } 
     if (red_addr) {
-        if (red_pwd) {
-           var opt = {auth_pass: red_pwd};
-           red_client = redis.createClient(red_port, red_addr, opt);
-        } else {
-            red_client = redis.createClient(red_port, red_addr);
-         }
+       if (red_pwd) {
+             var opt = {auth_pass: red_pwd};
+                                    console.log("connect:" + red_addr);
+                                    red_client = new redis(6379, 'localhost')//redis.createClient(red_port, red_addr, opt);
+                                    console.log("connect:" + red_addr);
+                                } else {
+                                    red_client = new redis(6379, 'localhost')//redis.createClient(red_port, red_addr);
+                                }
     } 
 	callback(red_client);
 	

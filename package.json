@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "request":"",
-    "redis":""
+    "redis":"",
+    "ioredis":""
   }
 }
