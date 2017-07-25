@@ -13,7 +13,7 @@ log.log_info("test info");
 
 
 
-redis.init( function(redis_client) {
+redis.init( "127.0.0.1", null, 6379, function(redis_client) {
 	
 	if (redis_client) {
 		console.log("redis connect success");
