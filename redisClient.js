@@ -61,4 +61,5 @@ function get_db_config(url, callback) {
 }
 
 
-exports.getRedisClient =  getRedisClient()
+exports.getRedisClient =  getRedisClient
+exports.init =  init
